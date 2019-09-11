@@ -1,6 +1,6 @@
 import { Injectable, NgZone, OnDestroy } from '@angular/core';
 
-declare function ResizeObserver(callback: ResizeObserverCallback): void;
+declare const ResizeObserver: ResizeObserverInterface;
 
 export interface ResizeObserverBoxSize {
     blockSize: number; // height if horizontal writing mode, width otherwise
@@ -23,13 +23,13 @@ export interface ResizeObserverEntry {
     target: Element;
 }
 
-export type ResizeObserverCallback = (resizes: ResizeObserverEntry[], observer: ResizeObserver) => void;
+export type ResizeObserverCallback = (resizes: ResizeObserverEntry[], observer: ResizeObserverInterface) => void;
 
 export interface ResizeObserverConfig {
     box?: 'content-box' | 'border-box';
 }
 
-export interface ResizeObserver {
+export interface ResizeObserverInterface {
     new (callback: ResizeObserverCallback);
     observe: (target: Element, config?: ResizeObserverConfig) => void;
     unobserve: (target: Element) => void;
@@ -42,7 +42,7 @@ export type ResizeObserverServiceCallback = (resize: ResizeObserverEntry) => voi
 export class NgxResizeObserverService implements OnDestroy {
     private count = 0;
     private elementMap = new Map<Element, ResizeObserverServiceCallback>();
-    private observer: ResizeObserver = null;
+    private observer: ResizeObserverInterface = null;
 
     constructor(private readonly ngZone: NgZone) {}
 
