@@ -1,0 +1,8 @@
+{
+  "name": "ngx-resize-observer",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "^8.1.2",
+    "@angular/core": "^8.1.2"
+  }
+}

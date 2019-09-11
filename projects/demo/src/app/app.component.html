@@ -1,0 +1,13 @@
+<div
+    #resizingElement
+    (onResize)="handleResize($event)"
+    [style.height.%]="heightDesired"
+    [style.width.%]="widthDesired"
+    style="border: 1px solid black; overflow: hidden"
+>
+    <div>This resizes automatically</div>
+    <div>Width: {{ widthReported }}</div>
+    <div>Height: {{ heightReported }}</div>
+    <div>Last updated from {{ triggeredBy }}</div>
+    <div>Check your console for events and and data</div>
+</div>

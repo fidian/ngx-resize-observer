@@ -1,0 +1,35 @@
+{
+  "name": "ngx-resize-observer",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build && cp README.md LICENSE.md dist/ngx-resize-observer",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "css": "atomizer -R -o projects/demo/src/styles.css --exclude \\*.css projects/demo/src"
+  },
+  "private": true,
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.801.2",
+    "@angular-devkit/build-ng-packagr": "~0.801.2",
+    "@angular/cli": "^8.1.2",
+    "@angular/common": "~8.1.2",
+    "@angular/compiler": "~8.1.2",
+    "@angular/compiler-cli": "~8.1.2",
+    "@angular/core": "~8.1.2",
+    "@angular/forms": "^8.1.2",
+    "@angular/platform-browser": "^8.1.2",
+    "@angular/platform-browser-dynamic": "^8.1.2",
+    "atomizer": "^3.6.0",
+    "ng-packagr": "^5.3.0",
+    "rxjs": "^6.5.2",
+    "tsickle": "^0.36.0",
+    "typescript": "~3.4.5",
+    "zone.js": "^0.9.1"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  }
+}

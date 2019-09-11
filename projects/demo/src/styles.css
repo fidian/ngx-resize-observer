@@ -1,0 +1,97 @@
+.Bdc\(black\) {
+  border-color: black;
+}
+.Bds\(s\) {
+  border-style: solid;
+}
+.Bdbs\(s\) {
+  border-bottom-style: solid;
+}
+.Bdw\(1px\) {
+  border-width: 1px;
+}
+.Bdbw\(1px\) {
+  border-bottom-width: 1px;
+}
+.Bdrstend\(15px\) {
+  border-top-right-radius: 15px;
+}
+.Bdrststart\(15px\) {
+  border-top-left-radius: 15px;
+}
+.Bgc\(darkblue\) {
+  background-color: darkblue;
+}
+.Bgc\(lightblue\) {
+  background-color: lightblue;
+}
+.Bgc\(red\) {
+  background-color: red;
+}
+.Bgz\(ct\) {
+  background-size: contain;
+}
+.Bgr\(nr\) {
+  background-repeat: no-repeat;
+}
+.C\(white\) {
+  color: white;
+}
+.D\(f\) {
+  display: flex;
+}
+.Fxg\(1\) {
+  flex-grow: 1;
+}
+.Fxs\(1\) {
+  flex-shrink: 1;
+}
+.Fxd\(c\) {
+  flex-direction: column;
+}
+.Ai\(c\) {
+  align-items: center;
+}
+.Fw\(b\) {
+  font-weight: bold;
+}
+.H\(100\%\) {
+  height: 100%;
+}
+.H\(250px\) {
+  height: 250px;
+}
+.H\(40px\) {
+  height: 40px;
+}
+.M\(0\) {
+  margin: 0;
+}
+.Mend\(4px\) {
+  margin-right: 4px;
+}
+.Ov\(a\) {
+  overflow: auto;
+}
+.Ov\(h\) {
+  overflow: hidden;
+}
+.P\(0\) {
+  padding: 0;
+}
+.P\(3px\) {
+  padding: 3px;
+}
+.Px\(20px\) {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.Td\(u\) {
+  text-decoration: underline;
+}
+.W\(100\%\) {
+  width: 100%;
+}
+.W\(250px\) {
+  width: 250px;
+}
