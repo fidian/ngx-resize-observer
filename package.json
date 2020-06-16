@@ -11,6 +11,7 @@
     "css": "atomizer -R -o projects/demo/src/styles.css --exclude \\*.css projects/demo/src"
   },
   "private": true,
+  "license": "MIT",
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.801.2",
     "@angular-devkit/build-ng-packagr": "~0.801.2",
