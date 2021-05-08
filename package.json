@@ -24,7 +24,7 @@
     "@angular/platform-browser": "^8.1.2",
     "@angular/platform-browser-dynamic": "^8.1.2",
     "atomizer": "^3.6.0",
-    "ng-packagr": "^5.3.0",
+    "ng-packagr": "^10.1.1",
     "rxjs": "^6.5.2",
     "tsickle": "^0.36.0",
     "typescript": "~3.4.5",
