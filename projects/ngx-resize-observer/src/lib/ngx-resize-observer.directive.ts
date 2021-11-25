@@ -3,13 +3,10 @@ import {
     Directive,
     ElementRef,
     EventEmitter,
-    Host,
     Input,
     OnChanges,
     OnDestroy,
-    Optional,
-    Output,
-    SkipSelf
+    Output
 } from '@angular/core';
 
 import {
