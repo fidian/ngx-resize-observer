@@ -1,11 +1,11 @@
 {
   "name": "ngx-resize-observer",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "dependencies": {
     "tslib": "^2.3.1"
   },
   "peerDependencies": {
-    "@angular/common": "~13.0.2",
-    "@angular/core": "~13.0.2"
+    "@angular/common": "^13.0.2",
+    "@angular/core": "^13.0.2"
   }
 }
