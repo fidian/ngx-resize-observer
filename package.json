@@ -3,33 +3,35 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "npm run css && ng build ngx-resize-observer && cp README.md LICENSE.md dist/ngx-resize-observer",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "css": "atomizer -R -o projects/demo/src/styles.css --exclude \\*.css projects/demo/src"
+    "start": "ng serve demo",
+    "build": "ng build ngx-resize-observer && cp README.md LICENSE.md dist/ngx-resize-observer"
   },
   "private": true,
-  "license": "MIT",
-  "devDependencies": {
-    "@angular-devkit/build-angular": "~14.0.6",
-    "@angular-devkit/core": "^14.0.6",
-    "@angular/cli": "^14.0.6",
-    "@angular/common": "~14.0.6",
-    "@angular/compiler": "~14.0.6",
-    "@angular/compiler-cli": "~14.0.6",
-    "@angular/core": "~14.0.6",
-    "@angular/forms": "^14.0.6",
-    "@angular/platform-browser": "^14.0.6",
-    "@angular/platform-browser-dynamic": "^14.0.6",
-    "atomizer": "^3.15.0",
-    "ng-packagr": "^14.0.3",
-    "rxjs": "^7.5.6",
-    "typescript": "^4.7.4",
-    "zone.js": "~0.11.6"
-  },
   "dependencies": {
-    "tslib": "^2.4.0"
+    "@angular/animations": "^15.0.0",
+    "@angular/common": "^15.0.0",
+    "@angular/compiler": "^15.0.0",
+    "@angular/core": "^15.0.0",
+    "@angular/forms": "^15.0.0",
+    "@angular/platform-browser": "^15.0.0",
+    "@angular/platform-browser-dynamic": "^15.0.0",
+    "@angular/router": "^15.0.0",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.12.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^15.0.4",
+    "@angular/cli": "~15.0.4",
+    "@angular/compiler-cli": "^15.0.0",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.5.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "ng-packagr": "^15.0.0",
+    "typescript": "~4.8.2"
   }
 }

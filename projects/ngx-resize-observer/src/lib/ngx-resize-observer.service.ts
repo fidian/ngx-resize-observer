@@ -1,39 +1,14 @@
 import { Injectable, NgZone, OnDestroy } from '@angular/core';
 
-declare const ResizeObserver: ResizeObserverInterface;
-
 export interface ResizeObserverBoxSize {
     blockSize: number; // height if horizontal writing mode, width otherwise
     inlineSize: number; // width if horizontal writing mode, height otherwise
 }
 
-export interface ResizeObserverEntry {
-    borderBoxSize?: ResizeObserverBoxSize;
-    contentBoxSize?: ResizeObserverBoxSize;
-    contentRect?: {
-        bottom: number;
-        height: number;
-        left: number;
-        right: number;
-        top: number;
-        width: number;
-        x: number;
-        y: number;
-    };
-    target: Element;
-}
-
-export type ResizeObserverCallback = (resizes: ResizeObserverEntry[], observer: ResizeObserverInterface) => void;
+export type ResizeObserverCallback = (resizes: ResizeObserverEntry[], observer: ResizeObserver) => void;
 
 export interface ResizeObserverConfig {
     box?: 'content-box' | 'border-box';
-}
-
-export interface ResizeObserverInterface {
-    new (callback: ResizeObserverCallback);
-    observe: (target: Element, config?: ResizeObserverConfig) => void;
-    unobserve: (target: Element) => void;
-    disconnect: () => void;
 }
 
 export type ResizeObserverServiceCallback = (resize: ResizeObserverEntry) => void;
@@ -42,7 +17,7 @@ export type ResizeObserverServiceCallback = (resize: ResizeObserverEntry) => voi
 export class NgxResizeObserverService implements OnDestroy {
     private count = 0;
     private elementMap = new Map<Element, ResizeObserverServiceCallback>();
-    private observer: ResizeObserverInterface = null;
+    private observer: ResizeObserver | null = null;
 
     constructor(private readonly ngZone: NgZone) {}
 
@@ -86,7 +61,7 @@ export class NgxResizeObserverService implements OnDestroy {
     unobserve(element: Element) {
         const cb = this.elementMap.get(element);
 
-        if (cb) {
+        if (cb && this.observer) {
             this.observer.unobserve(element);
             this.elementMap.delete(element);
             this.count -= 1;
@@ -98,7 +73,10 @@ export class NgxResizeObserverService implements OnDestroy {
     }
 
     private clearObserver() {
-        this.observer.disconnect();
+        if (this.observer) {
+            this.observer.disconnect();
+        }
+
         this.observer = null;
         this.count = 0;
         this.elementMap = new Map<Element, ResizeObserverServiceCallback>();

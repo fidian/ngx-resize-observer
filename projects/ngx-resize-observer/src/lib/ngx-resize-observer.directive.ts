@@ -6,12 +6,12 @@ import {
     Input,
     OnChanges,
     OnDestroy,
-    Output
+    Output,
+    SimpleChanges
 } from '@angular/core';
 
 import {
     NgxResizeObserverService,
-    ResizeObserverEntry
 } from './ngx-resize-observer.service';
 
 @Directive({
@@ -19,7 +19,7 @@ import {
 })
 export class NgxResizeObserverDirective
     implements AfterViewInit, OnChanges, OnDestroy {
-    @Input() resizeBoxModel: string;
+    @Input() resizeBoxModel = '';
     @Output() onResize = new EventEmitter<ResizeObserverEntry>();
     private observing = false;
 
@@ -32,8 +32,8 @@ export class NgxResizeObserverDirective
         this.observe();
     }
 
-    ngOnChanges(changes) {
-        if (this.observing && (changes.resizeBoxModel || changes.onResize)) {
+    ngOnChanges(changes: SimpleChanges) {
+        if (this.observing && (changes['resizeBoxModel'] || changes['onResize'])) {
             this.unobserve();
             this.observe();
         }

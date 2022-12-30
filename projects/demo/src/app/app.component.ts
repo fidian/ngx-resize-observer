@@ -12,12 +12,12 @@ import {
 })
 export class AppComponent implements AfterViewInit, OnInit {
     @ViewChild('resizingElement', { static: false })
-    resizingElement: ElementRef;
+    resizingElement: ElementRef | null = null;
     heightDesired = 100;
-    heightReported: number = null;
+    heightReported: number | null = null;
     triggeredBy = 'constructor';
     widthDesired = 100;
-    widthReported: number = null;
+    widthReported: number | null = null;
 
     ngOnInit() {
         setInterval(() => {
@@ -32,12 +32,16 @@ export class AppComponent implements AfterViewInit, OnInit {
         });
     }
 
-    handleResize(resize) {
+    handleResize(resize: ResizeObserverEntry) {
         console.log('onResize', resize);
         this.updateSize('onResize');
     }
 
     private updateSize(triggeredBy: string) {
+        if (!this.resizingElement) {
+            return;
+        }
+
         this.heightReported = this.resizingElement.nativeElement.clientHeight;
         this.widthReported = this.resizingElement.nativeElement.clientWidth;
         console.log(this.heightReported, this.widthReported);
