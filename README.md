@@ -1,6 +1,6 @@
 # NgxResizeObserver
 
-Angular 8.x library to monitor changes to elements. Uses ResizeObserver to do the work.
+Angular 15.x library to monitor changes to elements. Uses ResizeObserver to do the work.
 
 If you would like to simply know when elements are visible, check out [ngx-visibility](https://github.com/fidian/ngx-visibility/).
 
