@@ -1,9 +1,9 @@
 {
   "name": "ngx-resize-observer",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^15.0.0",
-    "@angular/core": "^15.0.0"
+    "@angular/common": "^16.0.0",
+    "@angular/core": "^16.0.0"
   }
 }
