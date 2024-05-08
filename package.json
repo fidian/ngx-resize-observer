@@ -2,9 +2,10 @@
   "name": "ngx-resize-observer",
   "version": "0.0.0",
   "scripts": {
+    "build": "ng build ngx-resize-observer && cp README.md LICENSE.md dist/ngx-resize-observer",
     "ng": "ng",
-    "start": "ng serve demo",
-    "build": "ng build ngx-resize-observer && cp README.md LICENSE.md dist/ngx-resize-observer"
+    "reinstall": "rm -rf .angular/ node_modules/ package-lock.json && npm install",
+    "start": "ng serve demo"
   },
   "private": true,
   "dependencies": {
@@ -18,15 +19,15 @@
     "@angular/router": "^17.0.0",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
-    "zone.js": "~0.14.2"
+    "zone.js": "^0.14.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.0",
     "@angular/cli": "~17.0.0",
     "@angular/compiler-cli": "^17.0.0",
     "@types/jasmine": "~5.1.4",
-    "jasmine-core": "~5.1.1",
-    "karma": "~6.4.2",
+    "jasmine-core": "~5.1.2",
+    "karma": "~6.4.3",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
