@@ -1,15 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
-import { NgxResizeObserverModule } from '../../../ngx-resize-observer/src/public-api';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 
 @NgModule({
-    declarations: [
-        AppComponent
+    imports: [
+        AppComponent,
+        BrowserModule,
+        FormsModule,
     ],
-    imports: [BrowserModule, FormsModule, NgxResizeObserverModule],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

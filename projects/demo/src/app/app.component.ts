@@ -3,12 +3,14 @@ import {
     Component,
     ElementRef,
     OnInit,
-    ViewChild
+    ViewChild,
 } from '@angular/core';
+import { NgxResizeObserverModule } from '../../../ngx-resize-observer/src/public-api';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    templateUrl: './app.component.html',
+    imports: [NgxResizeObserverModule],
 })
 export class AppComponent implements AfterViewInit, OnInit {
     @ViewChild('resizingElement', { static: false })
