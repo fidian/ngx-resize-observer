@@ -1,5 +1,5 @@
 import {
-    AfterViewInit,
+    afterNextRender,
     Directive,
     ElementRef,
     EventEmitter,
@@ -18,7 +18,7 @@ import {
     selector: '[onResize]'
 })
 export class NgxResizeObserverDirective
-    implements AfterViewInit, OnChanges, OnDestroy {
+    implements OnChanges, OnDestroy {
     @Input() resizeBoxModel = '';
     @Output() onResize = new EventEmitter<ResizeObserverEntry>();
     private observing = false;
@@ -26,10 +26,10 @@ export class NgxResizeObserverDirective
     constructor(
         private readonly elementRef: ElementRef,
         private readonly ngxResizeObserverService: NgxResizeObserverService
-    ) {}
-
-    ngAfterViewInit() {
-        this.observe();
+    ) {
+        afterNextRender(() => {
+            this.observe();
+        });
     }
 
     ngOnChanges(changes: SimpleChanges) {
