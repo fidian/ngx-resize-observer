@@ -4,6 +4,7 @@ import {
     ElementRef,
     EventEmitter,
     Input,
+    NgZone,
     OnChanges,
     OnDestroy,
     Output,
@@ -25,7 +26,8 @@ export class NgxResizeObserverDirective
 
     constructor(
         private readonly elementRef: ElementRef,
-        private readonly ngxResizeObserverService: NgxResizeObserverService
+        private readonly ngxResizeObserverService: NgxResizeObserverService,
+        private readonly ngZone: NgZone
     ) {
         afterNextRender(() => {
             this.observe();
@@ -47,7 +49,11 @@ export class NgxResizeObserverDirective
         if (!this.observing) {
             this.ngxResizeObserverService.observe(
                 this.elementRef.nativeElement,
-                resize => this.onResize.emit(resize),
+                resize => {
+                    this.ngZone.run(() => {
+                        this.onResize.emit(resize);
+                    });
+                },
                 this.resizeBoxModel
             );
             this.observing = true;
