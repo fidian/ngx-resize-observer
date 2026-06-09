@@ -1,15 +1,17 @@
 import {
-    AfterViewInit,
-    Component,
-    ElementRef,
-    OnInit,
-    ViewChild,
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { NgxResizeObserverModule } from '../../../ngx-resize-observer/src/public-api';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgxResizeObserverModule],
 })
 export class AppComponent implements AfterViewInit, OnInit {
